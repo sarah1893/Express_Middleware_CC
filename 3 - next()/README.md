@@ -37,3 +37,6 @@ An Express middleware is a function with three parameters: ``(req, res, next)``.
 
 ## Instructions
 1. Add a call to ``next`` after your logging statement so that the middleware will be executed before moving on to your routes.
+
+# Request And Response Parameters
+Recall the function signature of an Express middleware, i.e., ``(req, res, next)``. You might recognize this signature as being the very same that we’ve used for Express routes in the past. Well there’s a perfectly good reason for that: Express routes are middleware. Every route created in Express is also a middleware function handling the request and response objects at that part of the stack. Express routes also have the option of sending a response body and status code and closing the connection. These two features are a byproduct of Express routes being middleware, because all Express middleware functions have access to the request, the response, and the next middleware in the stack.
